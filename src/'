@@ -1,0 +1,46 @@
+fn main() {
+    let matrix =   vec![vec![  1,  2,  3,  4, 5 ],
+                        vec![ 16, 17, 18, 19, 6 ], 
+                        vec![ 15, 24, 25, 20, 7 ], 
+                        vec![ 14, 23, 22, 21, 8 ], 
+                        vec![ 13, 12, 11, 10, 9 ]];
+
+    println!("{:?}", snail(matrix))
+}
+
+fn snail(mut matrix: Vec<Vec<u32>>) -> Vec<u32> {
+    let mut output: Vec<u32> = vec![];
+
+    //while !matrix.is_empty() {
+        output.append(&mut matrix[0]);
+        output.append(&mut matrix.iter()
+                                 .filter(|x| !x.is_empty())
+                                 .map(|x| *x.pop().unwrap())
+                                 .collect());
+    //}
+
+    output
+}
+
+
+#[test]
+fn test_snail_number_spiral() {
+    let matrix =   vec![vec![  1,  2,  3,  4, 5 ],
+                        vec![ 16, 17, 18, 19, 6 ], 
+                        vec![ 15, 24, 25, 20, 7 ], 
+                        vec![ 14, 23, 22, 21, 8 ], 
+                        vec![ 13, 12, 11, 10, 9 ]];
+    
+    let expected_result: Vec<u32> = (1..=25).collect();
+    assert_eq!(snail(matrix), expected_result)
+}
+
+#[test]
+fn test_snail() {
+    let matrix = vec![vec![ 1, 2, 3 ],
+                      vec![ 4, 5, 6 ],
+                      vec![ 7, 8, 9 ]];
+
+    let expected_output = vec![ 1, 2, 3, 6, 9, 8, 7, 4, 5 ];
+    assert_eq!(snail(matrix), expected_output);
+}
