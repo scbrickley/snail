@@ -45,8 +45,8 @@ fn test_snail_number_spiral() {
                         vec![ 14, 23, 22, 21, 8 ], 
                         vec![ 13, 12, 11, 10, 9 ]];
     
-    let expected_result: Vec<u32> = (1..=25).collect();
-    assert_eq!(snail(matrix), expected_result)
+    let expected_ouput: Vec<u32> = (1..=25).collect();
+    assert_eq!(snail(matrix), expected_output);
 }
 
 #[test]
@@ -66,6 +66,6 @@ fn test_snail_even_length_matrix() {
                       vec![  9, 10, 11, 12 ],
                       vec![ 13, 14, 15, 16 ]];
 
-    let expected_output = vec![ 1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10];
+    let expected_output = vec![ 1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10 ];
     assert_eq!(snail(matrix), expected_output);
 }
