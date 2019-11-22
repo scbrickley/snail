@@ -45,7 +45,7 @@ fn test_snail_number_spiral() {
                         vec![ 14, 23, 22, 21, 8 ], 
                         vec![ 13, 12, 11, 10, 9 ]];
     
-    let expected_ouput: Vec<u32> = (1..=25).collect();
+    let expected_output: Vec<u32> = (1..=25).collect();
     assert_eq!(snail(matrix), expected_output);
 }
 
