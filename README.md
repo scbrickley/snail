@@ -1,3 +1,3 @@
 # Snail Sort
 
-My implementation of snail sort: A completely useless aorting algorithm.
+My implementation of snail sort: A completely useless sorting algorithm.
