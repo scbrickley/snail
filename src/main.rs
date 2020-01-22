@@ -1,6 +1,6 @@
 fn main() {
     let matrix = vec![
-        vec![1, 2, 3, 4, 5],
+        vec![ 1,  2,  3,  4, 5],
         vec![16, 17, 18, 19, 6],
         vec![15, 24, 25, 20, 7],
         vec![14, 23, 22, 21, 8],
@@ -41,7 +41,7 @@ fn snail(mut matrix: Vec<Vec<u32>>) -> Vec<u32> {
 #[test]
 fn test_snail_number_spiral() {
     let matrix = vec![
-        vec![1, 2, 3, 4, 5],
+        vec![ 1,  2,  3,  4, 5],
         vec![16, 17, 18, 19, 6],
         vec![15, 24, 25, 20, 7],
         vec![14, 23, 22, 21, 8],
@@ -54,7 +54,11 @@ fn test_snail_number_spiral() {
 
 #[test]
 fn test_snail() {
-    let matrix = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
+    let matrix = vec![
+			vec![1, 2, 3],
+			vec![4, 5, 6],
+			vec![7, 8, 9]
+		];
 
     let expected_output = vec![1, 2, 3, 6, 9, 8, 7, 4, 5];
     assert_eq!(snail(matrix), expected_output);
@@ -63,9 +67,9 @@ fn test_snail() {
 #[test]
 fn test_snail_even_length_matrix() {
     let matrix = vec![
-        vec![1, 2, 3, 4],
-        vec![5, 6, 7, 8],
-        vec![9, 10, 11, 12],
+        vec![ 1,  2,  3,  4],
+        vec![ 5,  6,  7,  8],
+        vec![ 9, 10, 11, 12],
         vec![13, 14, 15, 16],
     ];
 
