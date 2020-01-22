@@ -20,7 +20,9 @@ fn snail(mut matrix: Vec<Vec<u32>>) -> Vec<u32> {
 			break;
 		}
 
-		output.append(&mut matrix.iter_mut().map(|list| list.pop().unwrap()).collect());
+		output.append(&mut matrix.iter_mut()
+			.map(|list| list.pop().unwrap())
+			.collect());
 
 		let mut last_row = matrix.pop().unwrap();
 		last_row.reverse();
@@ -30,7 +32,9 @@ fn snail(mut matrix: Vec<Vec<u32>>) -> Vec<u32> {
 			break;
 		}
 
-		let mut left_column: Vec<u32> = matrix.iter_mut().map(|list| list.remove(0)).collect();
+		let mut left_column: Vec<u32> = matrix.iter_mut()
+			.map(|list| list.remove(0))
+			.collect();
 		left_column.reverse();
 		output.append(&mut left_column);
 	}
