@@ -16,9 +16,7 @@ fn snail(mut matrix: Vec<Vec<u32>>) -> Vec<u32> {
 	loop {
 		output.append(&mut matrix.remove(0));
 
-		if matrix.is_empty() {
-			break;
-		}
+		if matrix.is_empty() { break }
 
 		output.append(&mut matrix.iter_mut()
 			.map(|list| list.pop().unwrap())
@@ -28,9 +26,7 @@ fn snail(mut matrix: Vec<Vec<u32>>) -> Vec<u32> {
 		last_row.reverse();
 		output.append(&mut last_row);
 
-		if matrix.is_empty() {
-			break;
-		}
+		if matrix.is_empty() { break }
 
 		let mut left_column: Vec<u32> = matrix.iter_mut()
 			.map(|list| list.remove(0))
